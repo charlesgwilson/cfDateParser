@@ -1,5 +1,5 @@
 <!---
-    cfDateParser, A utility to aide in the parsing of various timestamps.
+    cfDateParser, A utility to aide in the parsing of various timestamp formats for ColdFusion and Railo.
     https://github.com/charlesgwilson/cfDateParser
 
     Copyright (c) 2013, Greg Wilson (http://www.imawilson.com/)
@@ -16,7 +16,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 --->
-<cfcomponent output="false" displayname="cfDateParser" hint="A utility to aide in the parsing of various timestamps.">
+<cfcomponent output="false" displayname="cfDateParser" hint="A utility to aide in the parsing of various timestamp formats for ColdFusion and Railo.">
     <cffunction name="parse" returntype="any" access="public" hint="Returns an empty string if no pattern is found">
         <cfargument name="dateString" required="true" type="string" />
         <cfset var _matches = "" />
