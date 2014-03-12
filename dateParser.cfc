@@ -46,41 +46,41 @@
         <cfset arrayAppend(_patterns, ["^\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}$", "dd MMM yyyy HH:mm"]) />
         <cfset arrayAppend(_patterns, ["^\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}$", "dd MMMM yyyy HH:mm"]) />
         <cfset arrayAppend(_patterns, ["^[a-z]{3}\s\d{1,2},\s\d{4}\s\d{1,2}:\d{2}$", "MMM dd, yyyy HH:mm"]) />
-        <cfset arrayAppend(_patterns, ["^\d{14}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyyMMddHHmmss"]) />
-        <cfset arrayAppend(_patterns, ["^\d{8}\s\d{6}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyyMMdd HHmmss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{14}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyyMMddHHmmss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{8}\s\d{6}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyyMMdd HHmmss"]) />
 
         <cfset arrayAppend(_patterns, ["^\d{8}T\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyyMMdd'T'HH:mm"]) />
         <cfset arrayAppend(_patterns, ["^\d{8}T\d{1,2}:\d{2}(\s?([+-]\d{2}:\d{2}:\d{1,2})?([a-z]{1,3})?)?$", "yyyyMMdd'T'HH:mm"]) />
-        <cfset arrayAppend(_patterns, ["^\d{8}T\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyyMMdd'T'HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^\d{8}T\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:\d{2}:\d{1,2})?([a-z]{1,3})?)?$", "yyyyMMdd'T'HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{8}T\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyyMMdd'T'HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{8}T\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:\d{2}:\d{1,2})?([a-z]{1,3})?)?$", "yyyyMMdd'T'HH:mm:ss"]) />
 
         <cfset arrayAppend(_patterns, ["^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyy-MM-dd'T'HH:mm"]) />
         <cfset arrayAppend(_patterns, ["^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{2}(\s?([+-]\d{2}:\d{2}:\d{1,2})?([a-z]{1,3})?)?$", "yyyy-MM-dd'T'HH:mm"]) />
-        <cfset arrayAppend(_patterns, ["^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyy-MM-dd'T'HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:\d{2}:\d{1,2})?([a-z]{1,3})?)?$", "yyyy-MM-dd'T'HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyy-MM-dd'T'HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:\d{2}:\d{1,2})?([a-z]{1,3})?)?$", "yyyy-MM-dd'T'HH:mm:ss"]) />
 
-        <cfset arrayAppend(_patterns, ["^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{2}:\d{2}Z$", "yyyy-MM-dd'T'HH:mm:ss'Z'"]) />
+        <cfset arrayAppend(_patterns, ["^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{2}:\d{2}(.\d{1,9})?Z$", "yyyy-MM-dd'T'HH:mm:ss'Z'"]) />
 
-        <cfset arrayAppend(_patterns, ["^\d{1,2}-\d{1,2}-\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "dd-MM-yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^\d{4}-\d{1,2}-\d{1,2}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyy-MM-dd HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^\d{1,2}/\d{1,2}/\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MM/dd/yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^\d{4}/\d{1,2}/\d{1,2}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyy/MM/dd HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^\d{1,2}.\d{1,2}.\d{1,2}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MM.dd.yy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^\d{1,2}.\d{1,2}.\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MM.dd.yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^\d{4}.\d{1,2}.\d{1,2}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyy.MM.dd HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{1,2}-\d{1,2}-\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "dd-MM-yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{4}-\d{1,2}-\d{1,2}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyy-MM-dd HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{1,2}/\d{1,2}/\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MM/dd/yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{4}/\d{1,2}/\d{1,2}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyy/MM/dd HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{1,2}.\d{1,2}.\d{1,2}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MM.dd.yy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{1,2}.\d{1,2}.\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MM.dd.yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{4}.\d{1,2}.\d{1,2}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "yyyy.MM.dd HH:mm:ss"]) />
 
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMM, dd yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMMM, dd yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}\s?[a-z]{2}(\s([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMM, dd yyyy hh:mm:ss a"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}\s?[a-z]{2}(\s([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMMM, dd yyyy hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMM, dd yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMMM, dd yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s?[a-z]{2}(\s([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMM, dd yyyy hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s?[a-z]{2}(\s([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMMM, dd yyyy hh:mm:ss a"]) />
 
-        <cfset arrayAppend(_patterns, ["^[a-z]{3}\s\d{1,2},\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMM dd, yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,}\s\d{1,2},\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMMM dd, yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{3}\s\d{1,2},\s\d{4}\s\d{1,2}:\d{2}:\d{2}\s?[a-z]{2}(\s([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMM dd, yyyy hh:mm:ss a"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,}\s\d{1,2},\s\d{4}\s\d{1,2}:\d{2}:\d{2}\s?[a-z]{2}(\s([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMMM dd, yyyy hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3}\s\d{1,2},\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMM dd, yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,}\s\d{1,2},\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMMM dd, yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3}\s\d{1,2},\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s?[a-z]{2}(\s([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMM dd, yyyy hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,}\s\d{1,2},\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s?[a-z]{2}(\s([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "MMMM dd, yyyy hh:mm:ss a"]) />
 
-        <cfset arrayAppend(_patterns, ["^\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "dd MMM yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "dd MMMM yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "dd MMM yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "dd MMMM yyyy HH:mm:ss"]) />
 
         <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{4}$", "EEE, dd MMM yyyy"]) />
         <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{4}$", "EEE, dd MMMM yyyy"]) />
@@ -102,50 +102,50 @@
         <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yyyy HH:mm"]) />
         <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yyyy HH:mm"]) />
 
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{2}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{2}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{2}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{2}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{2}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{2}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{2}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{2}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yy HH:mm:ss"]) />
 
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{2},\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yy, HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{2},\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yy, HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{2},\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yy, HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{2},\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yy, HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{2},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yy, HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{2},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yy, HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{2},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yy, HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{2},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yy, HH:mm:ss"]) />
 
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yyyy HH:mm:ss"]) />
 
         <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{4},\s\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yyyy, HH:mm"]) />
         <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{4},\s\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yyyy, HH:mm"]) />
         <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{4},\s\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yyyy, HH:mm"]) />
         <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{4},\s\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yyyy, HH:mm"]) />
 
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yyyy, HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yyyy, HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yyyy, HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yyyy, HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yyyy, HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yyyy, HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yyyy, HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yyyy, HH:mm:ss"]) />
 
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}:\d{2}\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yyyy hh:mm:ss a"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}:\d{2}\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yyyy hh:mm:ss a"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}:\d{2}\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yyyy hh:mm:ss a"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}:\d{2}\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yyyy hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yyyy hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yyyy hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yyyy hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yyyy hh:mm:ss a"]) />
 
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{4},\s\d{1,2}:\d{2}:\d{2}\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yyyy, hh:mm:ss a"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{4},\s\d{1,2}:\d{2}:\d{2}\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yyyy, hh:mm:ss a"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{4},\s\d{1,2}:\d{2}:\d{2}\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yyyy, hh:mm:ss a"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{4},\s\d{1,2}:\d{2}:\d{2}\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yyyy, hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{3}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMM yyyy, hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s\d{1,2}\s[a-z]{4,}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, dd MMMM yyyy, hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{3}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMM yyyy, hh:mm:ss a"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s\d{1,2}\s[a-z]{4,}\s\d{4},\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?\s[a-z]{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, dd MMMM yyyy, hh:mm:ss a"]) />
 
         <cfset arrayAppend(_patterns, ["^[a-z]{3},\s[a-z]{3}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, MMM dd yyyy HH:mm"]) />
         <cfset arrayAppend(_patterns, ["^[a-z]{3},\s[a-z]{4,}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, MMMM dd yyyy HH:mm"]) />
         <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s[a-z]{3}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, MMM dd yyyy HH:mm"]) />
         <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s[a-z]{4,}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, MMMM dd yyyy HH:mm"]) />
 
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s[a-z]{3}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, MMM dd yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s[a-z]{4,}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, MMMM dd yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s[a-z]{3}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, MMM dd yyyy HH:mm:ss"]) />
-        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s[a-z]{4,}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, MMMM dd yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s[a-z]{3}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, MMM dd yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{3},\s[a-z]{4,}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEE, MMMM dd yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s[a-z]{3}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, MMM dd yyyy HH:mm:ss"]) />
+        <cfset arrayAppend(_patterns, ["^[a-z]{4,},\s[a-z]{4,}\s\d{1,2}\s\d{4}\s\d{1,2}:\d{2}:\d{2}(.\d{1,9})?(\s?([+-]\d{2}:?\d{1,2})?([a-z]{1,3})?)?$", "EEEE, MMMM dd yyyy HH:mm:ss"]) />
 
         <cfloop array="#_patterns#" index="_pattern">
             <cfset _matches = reMatchNoCase(_pattern[1], arguments.dateString)>
